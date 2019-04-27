@@ -37,6 +37,9 @@ df = df.drop(['vendor_id'], axis = 1)
 df = df.drop(['passenger_count'], axis = 1)
 print(df.columns)
 
+for row in df.iteritems():
+    print(row)    
+
 df.corr().plot()
 
 plt.show()
