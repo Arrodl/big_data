@@ -26,8 +26,6 @@ def determineDistanceBetweenCoordinates (from_latitude, from_longitude, to_latit
     c = (2 * math.atan2(math.sqrt(a), math.sqrt(1 - a)))
     return rm * c
 
-
-
 # Load train data sample
 df = pd.read_csv('./train.csv')
 
@@ -36,8 +34,12 @@ printTitle('Llaves')
 df = df.drop(['id'], axis = 1)
 df = df.drop(['store_and_fwd_flag'], axis = 1)
 df = df.drop(['vendor_id'], axis = 1)
+df = df.drop(['passenger_count'], axis = 1)
 print(df.columns)
 
+df.corr().plot()
+
+plt.show()
 
 
 
